@@ -1,0 +1,13 @@
+--- ./GPL/nativeBuildProperties.gradle.orig	2019-02-28 13:00:16.000000000 +0100
++++ ./GPL/nativeBuildProperties.gradle	2019-03-22 09:34:12.951148000 +0100
+@@ -71,6 +71,10 @@
+ 			architecture 'x86_64'
+ 			operatingSystem 'osx'
+ 		}
++		freebsd64 {
++			architecture 'x86_64'
++			operatingSystem 'freebsd'
++		}
+ 	}	
+ }
+ 
