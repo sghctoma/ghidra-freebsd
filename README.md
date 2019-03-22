@@ -5,7 +5,7 @@ Although most of Ghidra is written in the platform-independent awesomeness that 
 First step, we need to fix the shebangs:
 
 ```sh
-[0x00 ghidra_9.0]$ grep -R '#!/bin/bash' * | cut -f1 -d: | xargs sed -i "" 's|#!/bin/bash|#!/usr/bin/env bash|g'
+[0x00 ghidra_9.0]$ grep -Rl '#!/bin/bash' . | xargs sed -i "" 's|#!/bin/bash|#!/usr/bin/env bash|g'
 ```
 
 Moving on. Native executables are placed in directories named after the OS and architecture, like so:
@@ -34,7 +34,6 @@ This works, but it's ugly. More so, Ghidra failed to automatically load external
 
 ```sh
 [0x00 ghidra_9.0]$ zip -d Ghidra/Framework/Generic/lib/Generic.jar ghidra/framework/Platform.class
-[0x00 ghidra_9.0]$ zip -d Ghidra/Framework/Generic/lib/Generic.jar ghidra/framework/Architecture.class
 [0x00 ghidra_9.0]$ zip -d Ghidra/Framework/Utility/lib/Utility.jar ghidra/framework/OperatingSystem.class
 ```
 
